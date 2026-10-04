@@ -1149,8 +1149,10 @@ $app->get('/api/materials/{id}', function (Request $req, Response $res, array $a
             'file_size' => $m->file_size ? (int) $m->file_size : null,
             // 影视跟读：视频成品路径。前端靠它决定是否渲染 <video> ——
             // 之前这里漏了 video_path，导致素材明明已绑视频、前端却显示"未绑定视频文件"。
-            'video_path' => $m->video_path,
-            'has_video' => $m->video_path && is_file((string) $m->video_path),
+            // ⚠️ 用 ?? 兜底：老库 / 未跑 migrate 的库缺这一列时，不能把 Warning 混进 JSON
+            //    （那会让前端 JSON.parse 失败、整个阅读器打不开）。
+            'video_path' => $m->video_path ?? null,
+            'has_video' => !empty($m->video_path) && is_file((string) $m->video_path),
             'series' => $m->series, 'season' => $m->season !== null ? (int) $m->season : null,
             'ep' => $m->ep, 'ep_title' => $m->ep_title,
             'ep_sort' => $m->ep_sort !== null ? (float) $m->ep_sort : null,

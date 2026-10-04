@@ -144,6 +144,9 @@ if (hasTable('materials')) {
         'ep' => 'TEXT',            // 集号原文（'01' / '07.5'）
         'ep_title' => 'TEXT',      // 集标题或标记（'finale' / 'SP'）
         'ep_sort' => 'REAL',       // 排序用集号
+        // ⚠️ init.php 建表时没有这一列，而 /api/materials/{id} 直接读它
+        //    → 缺列会让 PHP 抛 Warning 混进 JSON，前端 JSON.parse 失败、阅读器整页打不开。
+        'video_path' => 'TEXT',    // 影视跟读：视频文件路径
     ];
     foreach ($newCols as $c => $type) {
         if (!isset($cols[$c])) {
