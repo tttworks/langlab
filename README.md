@@ -1,239 +1,261 @@
-# langlab · 语言学习器
+# langlab
 
-> **本地优先的多语种学习系统** —— 用自己的真实材料学语言。
-> 卡片 · 间隔重复 · 划词建卡 · 内嵌阅读器 · AI 虚拟老师 · 本地发音诊断
+**English** | [中文](README.zh-CN.md) | [日本語](README.ja.md)
 
-![卡片学习器](docs/screenshots/cards.png)
+> **A local-first, multi-language learning system** — learn a language from your own real material.
+> Cards · spaced repetition · word-pick card creation · built-in reader · AI tutor · local pronunciation coaching
 
-**它不教你语言，它训练你用自己的材料。**
+![Card learner](docs/screenshots/cards.png)
 
-市面上的语言 App 教的是**它们的课程**；langlab 训练的是**你自己的材料** ——
-工作合同、行业 Memo、外文剧集、电子书。划词就建卡，卡片自动排期复习，
-还有一个虚拟老师能听你念、指出你在哪里卡壳。
+**It doesn't teach you a language. It trains you on your own material.**
 
-**所有数据都在你自己的机器上：不上传、不订阅、不锁定。**
+Mainstream language apps teach *their* curriculum. langlab trains you on *yours* — work
+contracts, industry memos, foreign series, ebooks. Select a word to make a card, cards get
+scheduled automatically for review, and a virtual tutor listens to you read and points out
+where you stumbled.
 
----
-
-## 作者
-
-**Aloysius Luo** —— AI 全栈开发与服务器运维。
-
-- GitHub：[@tttworks](https://github.com/tttworks)
-- 联系：a@tttworks.com
-- 欢迎 issue / PR（提交前请阅读 [CLA.md](CLA.md)）
+**All data stays on your own machine: nothing uploaded, no subscription, no lock-in.**
 
 ---
 
-## 为什么会有这个项目
+## Author
 
-因为工作变动，我需要在半年内把英语提到能**读专业文件、能坐下来谈判**的程度。
+**Aloysius Luo** — full-stack AI development and server operations.
 
-我按老办法背了几千个单词，然后发现一件沮丧的事：**在会议室里，那些词一个都调不出来。**
-后来我把自己的话录下来回听 —— **将近一半的录音时间是沉默**；而写错的单词，
-几乎全是「按发音猜的」。我脑子里存的是声音，不是字形。
-
-那一刻我明白了：**我的瓶颈不是「不认识」，是「取不出来」。**
-
-而市面上的工具都在解决前一个问题 —— 它们教你点咖啡、聊天气，
-可我真正要用的场景它一个字都不教。更关键的是，**我不缺材料**：
-我手上有大量真实的、我自己领域的英文文件。
-我缺的是把这些材料变成训练的系统 —— 而且因为材料涉密，它必须跑在我自己的机器上。
-
-于是就有了 langlab。它长成现在这样，**每一条设计都能追溯到上面某个具体的卡点**。
-
-📖 **[完整故事：为什么会有 langlab](docs/STORY.md)**
+- GitHub: [@tttworks](https://github.com/tttworks)
+- Contact: a@tttworks.com
+- Issues and PRs welcome (please read [CLA.md](CLA.md) before contributing)
 
 ---
 
-## 它适合谁
+## Why this project exists
 
-- 有大量真实外文材料要「吃透」的从业者（法律 / 投资 / 医疗 / 工程……）
-- 在意数据主权、不接受云账号的人
-- 已经「会一点」但**取不出来、说不顺**的学习者
+A change in my work meant I had to bring my English up to the level of *reading professional
+documents and sitting in negotiations* — within six months.
 
-**它不适合**：从零开始学一门语言的人（那请先用 Duolingo / Babbel 打基础）。
+I did it the old way and memorised a few thousand words. Then came the frustrating part:
+**in the meeting room, none of them would come when called.** Later I recorded myself speaking
+and listened back — **nearly half of the recording was silence**; and the words I misspelled
+were almost all *guessed from pronunciation*. What I had stored was sound, not spelling.
+
+That's when it clicked: **my bottleneck wasn't "not knowing" — it was "not being able to
+retrieve".**
+
+And every tool on the market was solving the first problem. They teach you to order coffee
+and talk about the weather; the situations I actually needed weren't covered at all. More to
+the point, **I wasn't short of material** — I had plenty of real English documents from my own
+field. What I lacked was a system that turns that material into training — and because the
+material is confidential, it had to run on my own machine.
+
+So langlab exists. Every design decision in it **traces back to one of those specific
+sticking points**.
+
+📖 **[The full story: why langlab exists](docs/STORY.md)**
 
 ---
 
-## 教学上的理论支撑
+## Who it's for
 
-系统的每一项功能，背后都对应一位学者的研究。**凡是引用，都能查到原文。**
+- Professionals with a large body of real foreign-language material to *absorb*
+  (legal / investment / medical / engineering …)
+- People who care about data sovereignty and won't accept a cloud account
+- Learners who already "know a bit" but **can't retrieve it or speak it fluently**
 
-| # | 功能 | 依据的理论 | 提出者 | 出处 |
+**It is not for** people starting a language from zero — build a foundation with Duolingo or
+Babbel first.
+
+---
+
+## Theoretical grounding
+
+Every feature maps to a specific published finding. **Every citation can be looked up.**
+
+| # | Feature | Theory | Author | Source |
 |---|---|---|---|---|
-| 1 | 语料只用自己的真实材料 | 可理解输入假说（i+1） | **Stephen Krashen**<br>南加州大学荣休教授 | Krashen, S. D. (1985). *The Input Hypothesis: Issues and Implications*. Longman. |
-| 2 | 卡片间隔重复排期 | 遗忘曲线与间隔重复 | **Hermann Ebbinghaus**<br>**Piotr Woźniak** | Ebbinghaus, H. (1885). *Über das Gedächtnis*.<br>Woźniak, P. A., & Gorzelańczyk, E. J. (1994). Optimization of Repetition Spacing in the Practice of Learning. *Acta Neurobiologiae Experimentalis*, 54(1), 59–62. |
-| 3 | 记录复习流水（为 FSRS 准备） | 间隔重复调度优化 | **叶峻峣 / 苏敬勇 / 曹译珑** | Ye, J., Su, J., & Cao, Y. (2022). A Stochastic Shortest Path Algorithm for Optimizing Spaced Repetition Scheduling. *KDD '22*, 4381–4390. |
-| 4 | 产出模式（看中文 → 说英文） | 测试效应 / 检索练习 | **Henry L. Roediger III**<br>**Jeffrey D. Karpicke** | Roediger, H. L., & Karpicke, J. D. (2006). Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention. *Psychological Science*, 17(3), 249–255. |
-| 5 | 框架复述 + 录音自评 | 输出假说 | **Merrill Swain**<br>多伦多大学 | Swain, M. (1995). Three Functions of Output in Second Language Learning. In *Principle and Practice in Applied Linguistics*. Oxford University Press. |
-| 6 | 每张卡带音标 + 音节切分 | 双重编码理论 | **Allan Paivio**<br>西安大略大学 | Paivio, A. (1986). *Mental Representations: A Dual Coding Approach*. Oxford University Press. |
-| 7 | 固定搭配 + 出处原句 | 词汇法（Lexical Approach） | **Michael Lewis**<br>**Paul Nation** | Lewis, M. (1993). *The Lexical Approach*. Language Teaching Publications.<br>Nation, I. S. P. (2001). *Learning Vocabulary in Another Language*. Cambridge University Press. |
-| 8 | 限定词高亮 / 分阶段放行 | 认知负荷理论 | **John Sweller**<br>新南威尔士大学 | Sweller, J. (1988). Cognitive Load During Problem Solving: Effects on Learning. *Cognitive Science*, 12(2), 257–285. |
-| 9 | 发音诊断的即时针对性反馈 | 刻意练习 | **K. Anders Ericsson** | Ericsson, K. A., Krampe, R. T., & Tesch-Römer, C. (1993). The Role of Deliberate Practice in the Acquisition of Expert Performance. *Psychological Review*, 100(3), 363–406. |
-| 10 | 一门课对应一个领域 | 窄式输入 | **Stephen Krashen** | Krashen, S. (2004). The Case for Narrow Reading. *Language Magazine*, 3(5), 17–19. |
-| 11 | 划词即建卡 | ⚠️ **不是学术理论** | — | 沉浸学习社区（AJATT / Antimoon）的通行做法 |
+| 1 | Material comes only from your own real texts | Comprehensible Input Hypothesis (i+1) | **Stephen Krashen**<br>Professor Emeritus, USC | Krashen, S. D. (1985). *The Input Hypothesis: Issues and Implications*. Longman. |
+| 2 | Spaced-repetition scheduling for cards | Forgetting curve & spaced repetition | **Hermann Ebbinghaus**<br>**Piotr Woźniak** | Ebbinghaus, H. (1885). *Über das Gedächtnis*.<br>Woźniak, P. A., & Gorzelańczyk, E. J. (1994). Optimization of Repetition Spacing in the Practice of Learning. *Acta Neurobiologiae Experimentalis*, 54(1), 59–62. |
+| 3 | Review log recorded (preparing for FSRS) | Spaced-repetition scheduling optimisation | **Ye Junyao / Su Jingyong / Cao Yilong** | Ye, J., Su, J., & Cao, Y. (2022). A Stochastic Shortest Path Algorithm for Optimizing Spaced Repetition Scheduling. *KDD '22*, 4381–4390. |
+| 4 | Production mode (Chinese → say it in English) | Testing effect / retrieval practice | **Henry L. Roediger III**<br>**Jeffrey D. Karpicke** | Roediger, H. L., & Karpicke, J. D. (2006). Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention. *Psychological Science*, 17(3), 249–255. |
+| 5 | Framework retelling + recorded self-review | Output Hypothesis | **Merrill Swain**<br>University of Toronto | Swain, M. (1995). Three Functions of Output in Second Language Learning. In *Principle and Practice in Applied Linguistics*. Oxford University Press. |
+| 6 | Phonetic transcription + syllable split per card | Dual Coding Theory | **Allan Paivio**<br>University of Western Ontario | Paivio, A. (1986). *Mental Representations: A Dual Coding Approach*. Oxford University Press. |
+| 7 | Collocations + source sentence | Lexical Approach | **Michael Lewis**<br>**Paul Nation** | Lewis, M. (1993). *The Lexical Approach*. Language Teaching Publications.<br>Nation, I. S. P. (2001). *Learning Vocabulary in Another Language*. Cambridge University Press. |
+| 8 | Determiner highlighting / staged release | Cognitive Load Theory | **John Sweller**<br>UNSW Sydney | Sweller, J. (1988). Cognitive Load During Problem Solving: Effects on Learning. *Cognitive Science*, 12(2), 257–285. |
+| 9 | Immediate, targeted feedback in pronunciation coaching | Deliberate Practice | **K. Anders Ericsson** | Ericsson, K. A., Krampe, R. T., & Tesch-Römer, C. (1993). The Role of Deliberate Practice in the Acquisition of Expert Performance. *Psychological Review*, 100(3), 363–406. |
+| 10 | One course = one domain | Narrow reading | **Stephen Krashen** | Krashen, S. (2004). The Case for Narrow Reading. *Language Magazine*, 3(5), 17–19. |
+| 11 | Select a word → card, immediately | ⚠️ **not an academic theory** | — | Common practice in immersion-learning communities (AJATT / Antimoon) |
 
-> ⚠️ **第 11 条特意标出来**：句子挖掘（sentence mining）是**社区实践**，没有对应的学术论文。
-> 把它混进「理论支撑」里会不诚实 —— 但它确实有效，所以保留，只是标注清楚。
+> ⚠️ **Item 11 is flagged deliberately**: sentence mining is **community practice**, not backed
+> by a paper. Folding it into "theoretical grounding" would be dishonest — but it works, so it
+> stays, clearly marked.
 
-### 与其他方案的区别
+### How it differs from other approaches
 
-|  | 课程型 App<br>（Duolingo 一类） | 闪卡工具<br>（Anki 一类） | **langlab** |
+|  | Course apps<br>(Duolingo et al.) | Flashcard tools<br>(Anki et al.) | **langlab** |
 |---|---|---|---|
-| 内容来源 | 平台的通用课程 | 你自己建卡 | **你自己的真实材料** |
-| 记忆调度 | 弱 | 最强 | 有（SM-2，已记 FSRS 数据） |
-| 产出训练 | 有限 | 取决于你怎么做卡 | **内置产出模式** |
-| 语音反馈 | 基础识别 | 无 | **本地发音诊断** |
-| 阅读整合 | 无 | 无 | **内嵌阅读器 + 划词建卡** |
-| 数据归属 | 云端账号 | 本地 | **本地** |
-| 上手成本 | 低（打开就能学） | 高（要自己拼装工具链） | 中（要自备材料） |
+| Content source | The platform's generic curriculum | Cards you build yourself | **Your own real material** |
+| Memory scheduling | Weak | Strongest | Yes (SM-2, FSRS data already recorded) |
+| Production training | Limited | Depends on how you make cards | **Built-in production mode** |
+| Speech feedback | Basic recognition | None | **Local pronunciation coaching** |
+| Reading integration | None | None | **Built-in reader + word-pick cards** |
+| Data ownership | Cloud account | Local | **Local** |
+| Setup cost | Low (open and learn) | High (assemble your own toolchain) | Medium (bring your own material) |
 
-**一句话概括三者的分工**：
+**In one line each:**
 
-- **课程型 App** 解决「我不知道学什么」—— 它们**给你内容**；
-- **闪卡工具** 解决「我要背下来」—— 但**卡要自己做、材料要自己找**；
-- **langlab** 解决「我手上有一堆材料要吃掉」—— 它把**阅读、建卡、复习、发音反馈**串成一条链。
+- **Course apps** solve "I don't know what to learn" — they **give you content**;
+- **Flashcard tools** solve "I need to memorise this" — but **you build the cards and find the material**;
+- **langlab** solves "I have a pile of material to get through" — it chains **reading, card creation, review and pronunciation feedback** into one flow.
 
-> ⚠️ 最后说明：以上是**设计依据**，不是「用了它就一定能学会」的保证。语言习得没有银弹。
-
----
-
-## 功能
-
-### 卡片学习器
-6 种卡片类型（单词 / 术语 / 语块 / 句式 / 概念 / 批注）；
-接受性与产出性双模式；乱序、随机抽、朗读、标记掌握。
-
-![卡片学习器](docs/screenshots/cards.png)
-
-### 内嵌阅读器 · 划词建卡
-EPUB / PDF 内嵌原版排版，或按句渲染的**精读模式**（带对照译文）。
-读到不会的地方，**选中 → 一键成卡**，自动带上出处与语境。
-
-![在阅读器里划词建卡](docs/screenshots/reader_wordpick.png)
-
-素材支持上传文件、登记本地路径、粘贴文本、网址抓取：
-
-![素材库](docs/screenshots/materials.png)
-
-### 虚拟老师 · 本地发音诊断
-多角色对话（英语 / 日语 / 泰语），**形象随语言切换**，会话历史自动保存、随时接着聊。
-更重要的是 —— 它会**真的听你念**：录音在本地用 whisper 分析，
-指出你哪里念错、含糊、卡壳，再给一条针对性的点评。**音频不出本机。**
-
-**日语 · Aoi**
-
-![日语老师 Aoi](docs/screenshots/teacher_aoi.png)
-
-**泰语 · Ploy**
-
-![泰语老师 Ploy](docs/screenshots/teacher_ploy.png)
-
-### 数据大盘
-核心指标 + 分阶段对比 + 182 天热力图。
-
-![数据大盘](docs/screenshots/dashboard.png)
-
-### 字典与素材库
-通用字典 / 专业术语字典（同一份词库两个视图）；
-素材支持上传文件、登记本地路径、粘贴文本、网址抓取。
-
-![字典](docs/screenshots/dict.png)
+> ⚠️ To be clear: the above is **design rationale**, not a guarantee that using it will make you
+> fluent. There is no silver bullet in language acquisition.
 
 ---
 
-## 快速开始
+## Features
 
-**环境**：PHP 8.2+、Node 18+；（可选）Python 3.11+ 用于发音诊断与语音合成。
+### Card learner
+Six card types (word / term / chunk / sentence pattern / concept / annotation);
+both receptive and productive modes; shuffle, random draw, read-aloud, mark-as-mastered.
+
+![Card learner](docs/screenshots/cards.png)
+
+### Built-in reader · word-pick card creation
+EPUB / PDF rendered in their original layout, or an **intensive reading mode** rendered
+sentence by sentence with a parallel translation. When you hit something you don't know:
+**select it → one click makes a card**, automatically carrying its source and context.
+
+![Creating a card by selecting text in the reader](docs/screenshots/reader_wordpick.png)
+
+Material can be uploaded as files, registered by local path, pasted as text, or fetched from a URL:
+
+![Material library](docs/screenshots/materials.png)
+
+### Virtual tutor · local pronunciation coaching
+Multi-role conversation (English / Japanese / Thai), **with the avatar switching per language**;
+session history is saved automatically so you can pick up where you left off.
+More importantly — **it actually listens to you read**: the recording is analysed locally with
+Whisper, which points out where you mispronounced, slurred or stalled, then gives one targeted
+piece of feedback. **The audio never leaves your machine.**
+
+**Japanese · Aoi**
+
+![Japanese tutor Aoi](docs/screenshots/teacher_aoi.png)
+
+**Thai · Ploy**
+
+![Thai tutor Ploy](docs/screenshots/teacher_ploy.png)
+
+### Dashboard
+Core metrics, stage-by-stage comparison, and a 182-day heatmap.
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+### Dictionary and material library
+General dictionary and domain-terminology dictionary (one word base, two views);
+material supports file upload, local path registration, pasted text and URL fetching.
+
+![Dictionary](docs/screenshots/dict.png)
+
+---
+
+## Quick start
+
+**Requirements**: PHP 8.2+, Node 18+; (optional) Python 3.11+ for pronunciation coaching and speech synthesis.
 
 ```bash
-# 1) 后端依赖
+# 1) Backend dependencies
 cd backend && composer install
 
-# 2) 配置（所有 Key 都是可选的，一个都不填也能跑）
+# 2) Configuration (every key is optional — it runs with none of them filled in)
 cp data/.env.example data/.env
 
-# 3) 建库 —— 三步顺序不能反
-php scripts/init.php         # 首次建表（⚠️ 会 DROP 重建，只在空库时用）
-php scripts/migrate.php      # 补齐后续新增的列（幂等，可反复跑）
-php scripts/seed_demo.php    # 可选：导入演示卡片，先看看效果
+# 3) Database — these three steps must run in this order
+php scripts/init.php         # create tables (⚠️ drops and recreates — only on an empty DB)
+php scripts/migrate.php      # add columns introduced later (idempotent, safe to re-run)
+php scripts/seed_demo.php    # optional: import demo cards to see it working
 
-# 4) 前端
+# 4) Frontend
 cd ../frontend && npm install && npm run dev
 ```
 
-浏览器打开 <http://localhost:5174>。
+Then open <http://localhost:5174>.
 
-> Windows 用户也可以直接双击根目录的 **`start.bat`**（要求 php 与 npm 已在 PATH 中）。
-
----
-
-## 导入自己的语料（操作说明）
-
-仓库**不含任何语料** —— 系统跑起来是空库，材料要你自己灌。
-四种方式，都在 **素材库**（`#/materials`）页面：
-
-### 方式一：上传文件（最常用）
-1. 打开 **素材库** → 点「上传文件」或直接把文件拖进页面
-2. 支持 **EPUB / PDF / DOCX / TXT / SRT / 台词本**
-3. 选择所属**课程**与**语言**，提交
-4. 系统自动抽文本、分段落、建索引（大文件会分块处理，进度可见）
-
-### 方式二：登记本地路径（不复制文件）
-适合书很多、不想占两份空间的场景。
-1. 在「登记本地路径」里填**绝对路径**（文件或整个目录）
-2. 只登记路径，**不复制、不改动原文件**
-3. 目录会被递归扫描并按课程归类
-
-### 方式三：粘贴文本
-零散的材料（一段邮件、一条新闻）直接粘进去即可。
-
-### 方式四：抓取网址
-填 URL，系统抓正文并去掉标签。抓不到时会提示改用「粘贴」（很多站点有反爬）。
-
-### 导入之后
-- **阅读**：从素材库点开 → 精读模式按句渲染，可对照译文、可朗读
-- **建卡**：选中任意文本 → 浮层里「保存并生成卡片」，可选让 AI 补释义与音标
-- **复习**：卡片学习器 → 「今天该复习」，按 SM-2 排期
-- **影视剧集**：`SRT + 视频` 一并导入后，会在「影视剧集」里形成 类别 → 剧名·季 → 每集 三级浏览
-
-> ⚠️ **请只导入你有权使用的材料。** 使用者对其导入内容的合法性自行负责。
+> On Windows you can also just double-click **`start.bat`** in the repository root
+> (requires `php` and `npm` to be on PATH).
 
 ---
 
-## 演示数据（demo）
+## Importing your own material
 
-`backend/data/demo_cards.json` 是**人工编写**的 31 张示例卡
-（19 个合同句型骨架 + 12 个法律概念），用来让 clone 下来的人立刻看到效果。
+The repository **ships with no corpus** — you start with an empty database and fill it yourself.
+There are four ways in, all on the **Material library** (`#/materials`) page:
 
-- **不来自任何真实合同、客户文件或商业资料**，不含机构名称、金额或商业安排
-- 许可是 **CC0（公共领域）** —— 随便用、随便改
-- 通过 `php scripts/seed_demo.php` 导入（幂等，可反复跑）
-- 导入后会出现在课程「合同英语（示例）」下
+### Option 1: Upload files (most common)
+1. Open **Material library** → click "Upload files", or drag files onto the page
+2. Supports **EPUB / PDF / DOCX / TXT / SRT / subtitle scripts**
+3. Choose the **course** and **language**, then submit
+4. Text is extracted, segmented and indexed automatically (large files are chunked, with visible progress)
 
-想换成自己的内容？直接编辑 `demo_cards.json`，或按上面的方式灌真实语料。
+### Option 2: Register a local path (no file copying)
+Useful when you have many books and don't want two copies on disk.
+1. Enter an **absolute path** (a file or a whole directory) under "Register local path"
+2. Only the path is registered — **your original files are neither copied nor modified**
+3. Directories are scanned recursively and grouped by course
+
+### Option 3: Paste text
+For fragments — a paragraph from an email, a news item — just paste it in.
+
+### Option 4: Fetch from a URL
+Enter a URL and the body text is extracted with tags stripped. If it fails, you'll be prompted to
+use "Paste" instead (many sites block scraping).
+
+### After importing
+- **Read**: open from the material library → intensive mode renders sentence by sentence, with optional parallel translation and read-aloud
+- **Make cards**: select any text → "Save and create card" in the popover, optionally letting AI fill in definitions and phonetics
+- **Review**: Card learner → "Due today", scheduled by SM-2
+- **Film & series**: importing `SRT + video` together creates a three-level browser: category → title·season → episode
+
+> ⚠️ **Only import material you have the right to use.** Users are responsible for the legality
+> of the content they import.
 
 ---
 
-## 它不做什么
+## Demo data
 
-- **不做课程** —— 不提供从零到流利的教学内容，材料要你自备
-- **不做云同步** —— 数据在本机，多处使用请自行处理
-- **不收集任何数据** —— 没有遥测、没有账号、没有上报
+`backend/data/demo_cards.json` holds **31 hand-written** sample cards
+(19 contract sentence skeletons + 12 legal concepts), so that anyone who clones the repo can see
+it working immediately.
 
-除 AI 对话功能外，**全部离线可用**（卡片、阅读、复习、发音诊断都在本机跑）。
+- **Derived from no real contract, client file or commercial document**; contains no
+  institution names, amounts or commercial arrangements
+- Licensed **CC0 (public domain)** — use it, change it, no strings
+- Import with `php scripts/seed_demo.php` (idempotent, safe to re-run)
+- After import the cards appear under the course "Contract English (sample)"
+
+Want to swap in your own? Edit `demo_cards.json` directly, or load real material using the
+methods above.
 
 ---
 
-## 许可
+## What it doesn't do
 
-| 对象 | 许可 |
+- **No curriculum** — it doesn't provide content from zero to fluency; you bring the material
+- **No cloud sync** — data lives on your machine; using it in several places is up to you
+- **Collects nothing** — no telemetry, no account, no phone-home
+
+Except for the AI conversation feature, **everything works offline** (cards, reading, review and
+pronunciation coaching all run locally).
+
+---
+
+## License
+
+| Subject | License |
 |---|---|
-| 代码 | [MIT](LICENSE) |
-| 文档 | [CC BY 4.0](CONTENT-LICENSE.md) |
-| 演示数据 | CC0（公共领域） |
-| 形象素材 | 随代码，MIT |
+| Code | [MIT](LICENSE) |
+| Documentation | [CC BY 4.0](CONTENT-LICENSE.md) |
+| Demo data | CC0 (public domain) |
+| Character assets | With the code, MIT |
 
-第三方组件的许可见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
-贡献代码前请阅读 [CLA.md](CLA.md)。
+Third-party component licences are listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+Please read [CLA.md](CLA.md) before contributing code.
