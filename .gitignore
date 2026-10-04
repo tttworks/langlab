@@ -32,7 +32,8 @@ backend/data/files/
 # ── 模型权重（约 464MB；README 提供下载指引）──
 models/
 
-# ── 文档截图（含第三方素材画面，不入库；本地仍保留）──
+# ── 本地文档截图（含真实素材画面，不入库）──
+#   注意：docs/screenshots/ 是**已脱敏的演示截图**，要入库
 docs/*.png
 docs/samples/
 
@@ -51,6 +52,7 @@ docs/samples/
 node_modules/
 vendor/
 frontend/dist/
+.vite/
 __pycache__/
 *.pyc
 
