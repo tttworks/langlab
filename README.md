@@ -132,11 +132,13 @@ EPUB / PDF 内嵌原版排版，或按句渲染的**精读模式**（带对照�
 ![素材库](docs/screenshots/materials.png)
 
 ### 虚拟老师 · 本地发音诊断
-多角色对话（英语 / 日语 / 泰语），并且 —— 它会**真的听你念**：
-录音在本地用 whisper 分析，指出你哪里念错、含糊、卡壳，
-再给一条针对性的点评。**音频不出本机。**
+多角色对话（英语 / 日语 / 泰语），**形象随语言切换**，并且 —— 它会**真的听你念**：
+录音在本地用 whisper 分析，指出你哪里念错、含糊、卡壳，再给一条针对性的点评。
+**音频不出本机。**
 
-![虚拟老师](docs/screenshots/teacher.png)
+| 日语 · Aoi | 泰语 · Ploy |
+|---|---|
+| ![Aoi](docs/screenshots/teacher_aoi.png) | ![Ploy](docs/screenshots/teacher_ploy.png) |
 
 ### 数据大盘
 核心指标 + 分阶段对比 + 182 天热力图。
