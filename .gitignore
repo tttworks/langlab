@@ -1,0 +1,60 @@
+# ────────────────────────────────────────────────
+#  langlab · .gitignore
+#
+#  原则：仓库只放「引擎」，不放「燃料」。
+#  语料 / 卡片 / 录音 / 密钥 / 模型 一律不入库；
+#  本地文件全部保留，只是不进入 Git。
+# ────────────────────────────────────────────────
+
+# ── 密钥（最高优先）──
+.env
+backend/data/.env
+*.env.local
+
+# ── 数据库与备份（含私人卡片与语料）──
+backend/data/*.sqlite
+backend/data/*.sqlite.bak_*
+backend/data/*.db
+backend/data/*.db-journal
+backend/data/*.db-wal
+
+# ── 本地种子数据（例句与出处来自真实项目文档，涉密）──
+# 仓库自带的是 backend/data/demo_cards.json（已脱敏）
+backend/data/cards_seed.json
+
+# ── 运行时产物（体积 + 第三方权利）──
+backend/data/tts/
+backend/data/rec/
+backend/data/subs/
+backend/data/videos/
+backend/data/files/
+
+# ── 模型权重（约 464MB；README 提供下载指引）──
+models/
+
+# ── 文档截图（含第三方素材画面，不入库；本地仍保留）──
+docs/*.png
+docs/samples/
+
+# ── 私人内容（永不公开）──
+录音/
+测评/
+日历/
+语料库/
+26周学习计划-英语优先.md
+每日课程表_08-10.md
+语料与能力基线.md
+新对话开场白.md
+学习系统v2_设计_2026-10-03.md
+
+# ── 依赖与构建产物 ──
+node_modules/
+vendor/
+frontend/dist/
+__pycache__/
+*.pyc
+
+# ── 系统 ──
+.DS_Store
+Thumbs.db
+*.log

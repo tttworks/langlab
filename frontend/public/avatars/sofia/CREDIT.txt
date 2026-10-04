@@ -1,0 +1,12 @@
+形象 ID ：sofia
+角色    ：英语会话老师 · 女性（白人 · 金发 · **二十出头（22–24）的成年女性**）
+文件    ：idle.webp（380×570，2:3 竖版，到腰立绘，带 alpha 透明背景）
+风格    ：写实照片
+来源    ：AI 生成的原创虚构人物，非任何真实人物
+生成时间：2026-10-04
+处理    ：rembg（U²-Net）AI 抠图 → tools/avatar_cutout.py 裁 2:3 → WebP
+
+⚠️ 人设为成年女性，与任何真实人物无关。
+⚠️ 出图提示词里显式写了 NOT a teenager / NOT childlike / NOT a minor，
+   并刻意避开了 cute / sweet / innocent / petite / girl 这类会把人画小的词。
+换素材请保持：2:3 竖版 · 到腰 · 透明背景 · ≤ 100KB

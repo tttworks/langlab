@@ -1,0 +1,27 @@
+# ────────────────────────────────────────────────
+#  行尾与二进制统一声明
+#  避免不同系统 clone 下来行尾不一致（Windows 的 autocrlf 会捣乱）
+# ────────────────────────────────────────────────
+
+# 文本文件：仓库内一律 LF
+* text=auto eol=lf
+
+# Windows 批处理必须是 CRLF
+*.bat text eol=crlf
+
+# 压缩产物：不做行尾转换（避免破坏文件）
+*.min.js -text
+
+# 二进制资源
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.pdf  binary
+*.mp3  binary
+*.wav  binary
+*.mp4  binary
+*.bin  binary
+*.sqlite binary

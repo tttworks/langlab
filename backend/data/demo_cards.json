@@ -1,0 +1,528 @@
+{
+  "generated_at": "2026-10-04",
+  "source": "langlab demo — 人工编写的通用法律英语，不含任何真实合同、机构名称、金额或商业安排",
+  "lang_code": "en-US",
+  "course_id": "en-contract",
+  "sets": [
+    {
+      "id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "title": "句式 · 合同条文骨架",
+      "sub": "高频句型（示例数据）",
+      "kind": "pattern",
+      "cats": {
+        "合同义务": "合同义务",
+        "责任与免责": "责任与免责",
+        "保密": "保密",
+        "违约与救济": "违约与救济",
+        "争议与解释": "争议与解释",
+        "通则": "通则"
+      },
+      "sort": 1,
+      "item_count": 19
+    },
+    {
+      "id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "title": "概念 · 英美合同法内功",
+      "sub": "核心概念（示例数据）",
+      "kind": "concept",
+      "cats": {
+        "合同义务": "合同义务",
+        "责任与免责": "责任与免责",
+        "违约与救济": "违约与救济",
+        "解释与效力": "解释与效力"
+      },
+      "sort": 2,
+      "item_count": 12
+    }
+  ],
+  "cards": [
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::未经书面同意不得",
+      "sort": 1,
+      "data": {
+        "n": "未经书面同意不得……",
+        "en": "Without [X]'s prior written consent, [Y] shall not [do sth].",
+        "zh": "未经 X 事先书面同意，Y 不得……。",
+        "use": "设定「需许可」型禁止义务。禁止事项前面加一道「许可门」，比绝对禁止更实务。",
+        "eg": "Without the Disclosing Party's prior written consent, the Receiving Party shall not disclose any Confidential Information to any third party.",
+        "cat": "保密"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::受限后的责任上限",
+      "sort": 2,
+      "data": {
+        "n": "受限后的责任上限",
+        "en": "Subject to Sections [A] and [B], and to the extent permitted by Applicable Law, [X] shall not exceed [Y].",
+        "zh": "在受第 A、B 条约束、并在适用法律允许的范围内，X 不超过 Y。",
+        "use": "责任上限的标准写法。Subject to 表示「被引用的那几条优先」，即例外条款优先于上限。",
+        "eg": "Subject to Sections 9 and 10, and to the extent permitted by Applicable Law, the aggregate liability of either Party under this Agreement, whether arising in contract, tort (including negligence) or otherwise, shall not exceed the amount agreed by the Parties in writing.",
+        "cat": "责任与免责"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::但书例外",
+      "sort": 3,
+      "data": {
+        "n": "但书（例外）",
+        "en": "[Rule], provided that [exception].",
+        "zh": "……，但（前提是）……。",
+        "use": "在主规则后面挖一个例外。它是对刚说过的那句话的限定，不推翻整句。",
+        "eg": "The confidentiality obligations shall continue during the term of this Agreement and for three (3) years after its termination, provided that the obligations in respect of trade secrets shall survive indefinitely.",
+        "cat": "保密"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::本条不适用carveout",
+      "sort": 4,
+      "data": {
+        "n": "本条规定不适用于（开口 / carve-out）",
+        "en": "The limitations in Section [A] shall not apply to: (a) …; (b) …; (c) ….",
+        "zh": "第 A 条的限制不适用于：(a)……；(b)……；(c)……。",
+        "use": "在免责或责任上限上开例外口子。没有开口的「全免」在英美法下最容易被整体判无效。",
+        "eg": "The limitations in Section 9 shall not apply to: (a) a Party's indemnification obligations under Section 10; (b) liability arising from a Party's fraud, wilful misconduct or gross negligence; or (c) breach by a Party of its confidentiality obligations.",
+        "cat": "责任与免责"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::适用法律允许范围内",
+      "sort": 5,
+      "data": {
+        "n": "在适用法律允许的范围内",
+        "en": "To the extent permitted by Applicable Law, [X].",
+        "zh": "在适用法律允许的范围内，X。",
+        "use": "给条款加一道合法性护栏：法律不允许的部分自动落空，但整条不至于作废。",
+        "eg": "Nothing in this Agreement excludes or limits any liability that cannot lawfully be excluded or limited under Applicable Law.",
+        "cat": "责任与免责"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::条件触发where句式",
+      "sort": 6,
+      "data": {
+        "n": "条件触发（Where 句式）",
+        "en": "Where [Party] [does sth], [the other Party] shall [do sth].",
+        "zh": "一方……的，另一方应……。",
+        "use": "英文合同里 Where 引导条件从句非常常见，相当于中文的「……的」。",
+        "eg": "Where a Party commits a material breach and fails to remedy it within thirty (30) days after written notice, the non-breaching Party may terminate this Agreement by written notice.",
+        "cat": "违约与救济"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::义务定性协助而非保证",
+      "sort": 7,
+      "data": {
+        "n": "义务的定性：协助，而非保证",
+        "en": "[X] shall assist [Y] in [doing sth].",
+        "zh": "X 应协助 Y 完成……。",
+        "use": "顾问、代理类合同的核心动词结构。用 assist / advise / coordinate 而不是 ensure，把义务定性在「努力」而非「结果」。",
+        "eg": "Each Party shall assist the other Party in complying with the obligations set out in this Agreement.",
+        "cat": "合同义务"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::有权无权",
+      "sort": 8,
+      "data": {
+        "n": "有权／无权",
+        "en": "[X] shall be entitled to [do sth]. / [X] shall have no authority to [do sth].",
+        "zh": "X 有权……／X 无权……。",
+        "use": "前者授予权利，后者排除代理与越权风险。两句话在实务中常常需要配对出现。",
+        "eg": "Neither Party shall have any authority to make any representation on behalf of the other Party, or to assume or create any obligation or liability of the other Party, except as expressly authorised in writing for a specific matter.",
+        "cat": "合同义务"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::本协议不否定式总则",
+      "sort": 9,
+      "data": {
+        "n": "本协议不……（否定式总则）",
+        "en": "Nothing in this Agreement shall [do sth].",
+        "zh": "本协议中的任何内容均不得……。",
+        "use": "用来排除某种解释或后果，是全篇性的。",
+        "eg": "Nothing in this Agreement creates a partnership, joint venture, agency, employment or fiduciary relationship between the Parties.",
+        "cat": "通则"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::间接损失免责清单",
+      "sort": 10,
+      "data": {
+        "n": "间接损失免责清单",
+        "en": "Neither Party shall be liable for any [list of loss types], whether arising in contract, tort (including negligence) or otherwise, even if that Party has been advised of the possibility of such loss.",
+        "zh": "双方均不对任何……损失负责，无论是基于合同、侵权（包括过失）还是其他原因，即使该方已被告知该等损失的可能性。",
+        "use": "美式合同的固定清单。关键不是「写得多」，而是「列得全」。",
+        "eg": "Neither Party shall be liable for any indirect, incidental, special, punitive or consequential loss or damage, or for loss of profit, revenue, goodwill, data or anticipated savings.",
+        "cat": "责任与免责"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::定义句式",
+      "sort": 11,
+      "data": {
+        "n": "定义句式",
+        "en": "[Term] means [definition], including [examples].",
+        "zh": "「术语」指……，包括……。",
+        "use": "把关键词的含义锁死。后面正文里凡是首字母大写的词，都要回这里查。",
+        "eg": "Confidential Information means any non-public information disclosed by one Party to the other, including technical, commercial and financial information, whether in written, oral or electronic form.",
+        "cat": "通则"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::视为拟制",
+      "sort": 12,
+      "data": {
+        "n": "视为（拟制）",
+        "en": "[X] shall be deemed to [have done sth].",
+        "zh": "X 视为已……。",
+        "use": "法律上的拟制：不管实际如何，一律当作是。常用于送达、同意、确认。",
+        "eg": "If the receiving Party does not respond within the notice period, the notice shall be deemed to have been duly received by that Party.",
+        "cat": "通则"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::适用法律与解释",
+      "sort": 13,
+      "data": {
+        "n": "适用法律与解释",
+        "en": "This Agreement shall be governed by and construed in accordance with the laws of [jurisdiction].",
+        "zh": "本协议受……法律管辖并依其解释。",
+        "use": "法律适用条款的标准句。governed by（管辖）与 construed in accordance with（解释）缺一不可。",
+        "eg": "This Agreement shall be governed by and construed in accordance with the laws of [jurisdiction], without regard to its conflict of laws principles.",
+        "cat": "争议与解释"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::存续条款",
+      "sort": 14,
+      "data": {
+        "n": "存续条款",
+        "en": "[The following provisions] shall survive the termination or expiry of this Agreement.",
+        "zh": "下列条款在本协议终止或期满后继续有效。",
+        "use": "明确合同结束后哪些义务还活着。这是英文合同的技术必备项。",
+        "eg": "After termination of this Agreement, the confidentiality provisions, the limitation of liability provisions and the governing law and dispute resolution provisions shall survive.",
+        "cat": "通则"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::善意协商",
+      "sort": 15,
+      "data": {
+        "n": "善意协商",
+        "en": "The Parties shall negotiate in good faith to [do sth].",
+        "zh": "双方应善意协商……。",
+        "use": "收尾型义务。注意它在英美法下通常只产生「协商义务」，不产生「达成一致的义务」。",
+        "eg": "The Parties shall negotiate in good faith to replace the affected provision with a valid provision that achieves, as closely as possible, the same intent.",
+        "cat": "通则"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::不得无理拒绝或拖延同意",
+      "sort": 16,
+      "data": {
+        "n": "不得无理拒绝或拖延同意",
+        "en": "such consent shall not be unreasonably withheld or delayed",
+        "zh": "该同意不得被无理拒绝或拖延。",
+        "use": "限制对方的同意权，防止「许可门」变成一票否决。这句话是可以换到实质利益的筹码。",
+        "eg": "such consent shall not be unreasonably withheld or delayed",
+        "cat": "合同义务"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::列举开放与封闭",
+      "sort": 17,
+      "data": {
+        "n": "列举的开放式与封闭式",
+        "en": "including but not limited to [A, B and C] / including [A, B and C]",
+        "zh": "包括但不限于／包括。",
+        "use": "开放列举（还有别的）用 including but not limited to；封闭列举（就这些）用 including 或 namely。",
+        "eg": "Other reasonable measures approved by the other Party in writing in advance (including but not limited to technical, organisational and administrative measures).",
+        "cat": "通则"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::分割与替代可分性",
+      "sort": 18,
+      "data": {
+        "n": "分割与替代（可分性）",
+        "en": "If any provision is or becomes illegal, invalid or unenforceable, that provision shall be severed and the remaining provisions shall continue in full force and effect.",
+        "zh": "如任何条款违法、无效或不可执行，该条款应予分割，其余条款继续完全有效。",
+        "use": "可分性条款。确保某一条被判无效时，其余条款不会连带失效。",
+        "eg": "If any provision of this Agreement is held to be invalid or unenforceable, the Parties shall negotiate in good faith to replace it with a valid provision achieving, as closely as possible, the same intent.",
+        "cat": "解释与效力"
+      }
+    },
+    {
+      "set_id": "patterns",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "pattern",
+      "key": "patterns::完整协议合并条款",
+      "sort": 19,
+      "data": {
+        "n": "完整协议（合并条款）",
+        "en": "This Agreement constitutes the entire agreement between the Parties with respect to the subject matter hereof and supersedes all prior agreements and understandings.",
+        "zh": "本协议构成双方就其标的达成的完整协议，并取代此前一切协议与谅解。",
+        "use": "把谈判过程中所有口头承诺全部归零，只以签署文本为准。",
+        "eg": "This Agreement constitutes the entire agreement between the Parties with respect to the subject matter hereof and supersedes all prior agreements and understandings with respect to such subject matter.",
+        "cat": "解释与效力"
+      }
+    },
+    {
+      "set_id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "concept",
+      "key": "concepts::努力义务vs结果义务",
+      "sort": 20,
+      "data": {
+        "n": "努力义务 vs 结果义务",
+        "en": "obligations of skill and effort vs. obligations to achieve a particular result",
+        "one": "顾问、代理类合同的定性框架：承诺「尽力做」，不承诺「做得到」。",
+        "body": "英美法把合同义务分成两类。结果义务（obligation of result）是「必须交付某个结果」，没做到即违约；技能与努力义务（obligation of skill and effort）是「必须以适当技能与勤勉去做」，需要对方证明你没尽力才算违约。律师、投行、顾问、中介提供的都是后者——因为结果取决于市场、第三方意愿、监管等不在其控制内的因素。写合同时把这个定性写清楚，比单纯写一句「不保证」有效得多：前者是在准确描述这类服务的本质，法院和对方律师都很难反驳；后者读起来像在推卸责任，反而容易被攻击。",
+        "cat": "合同义务"
+      }
+    },
+    {
+      "set_id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "concept",
+      "key": "concepts::责任上限与例外开口",
+      "sort": 21,
+      "data": {
+        "n": "责任上限与例外开口",
+        "en": "limitation of liability, liability cap and carve-out",
+        "one": "「最多赔多少」这条线，必须配几个「这几件事不受上限约束」的口子。",
+        "body": "责任上限（cap）是约定双方赔偿金额的天花板，通常以「已付款总额」或「合同金额的 X 倍」为口径。但英美法下，一个没有任何例外的「全免」条款最容易被打掉：法院会认为它与其后的赔偿条款自相矛盾，从而整条不认。所以标准做法是配 carve-out（开口）——列出几类不受上限约束的责任，常见四类：赔偿义务、欺诈／故意不当行为／重大过失、违反保密义务、以及付款义务。",
+        "cat": "责任与免责"
+      }
+    },
+    {
+      "set_id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "concept",
+      "key": "concepts::惩罚条款无效原则",
+      "sort": 22,
+      "data": {
+        "n": "惩罚条款无效原则",
+        "en": "the penalty doctrine",
+        "one": "违约金写得越狠，越可能一分钱都收不到。",
+        "body": "英美法认为合同是补偿工具，不是惩罚工具。如果约定的违约金额远超合理预估的损失、意在恐吓对方履约，法院会认定它构成 penalty（罚则）并判决整条无效——不是打折执行，是整条不认，只能另行索赔实际损失。所以起草时的三件套是：① 把「违约金」改定性为 interest（补偿性利息）；② 加法定上限兜底「or, if lower, the maximum rate permitted by Applicable Law」；③ 明示「does not constitute a penalty」，给法院一个解释指引。",
+        "cat": "违约与救济"
+      }
+    },
+    {
+      "set_id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "concept",
+      "key": "concepts::不利于起草方解释",
+      "sort": 23,
+      "data": {
+        "n": "不利于起草方解释",
+        "en": "contra proferentem",
+        "one": "条款有歧义，法院倾向于作出对起草方不利的解释。",
+        "body": "推论更重要：免责条款写得越是「一网打尽」，越容易被窄义解释——你越想免责，越免责不了。所以免责条款的目标不是「写得重」，而是「写得准」：该覆盖的路径要枚举清楚（合同、侵权含过失、其他），该列的损失类型要列全，该开的例外要开。合理的起草思路是「收敛强度 + 补 carve-out + 加 savings clause」。",
+        "cat": "解释与效力"
+      }
+    },
+    {
+      "set_id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "concept",
+      "key": "concepts::可分性与救助条款",
+      "sort": 24,
+      "data": {
+        "n": "可分性与救助条款",
+        "en": "severability and savings clause",
+        "one": "两个不同工具：一个切掉坏条款保其他条款，一个把不该免的责任还回去。",
+        "body": "可分性（severability）：某条被判违法、无效或不可执行时，该条被「切掉」，其余条款继续完全有效，且双方有义务善意协商以尽可能实现相同意图的替代条款。救助条款（savings clause）：声明本协议不排除或限制任何依适用法律不能合法排除或限制的责任——万一免责条款的某个开口被认定不足，法院可以据此「往回填」，而不是整条砍掉。",
+        "cat": "解释与效力"
+      }
+    },
+    {
+      "set_id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "concept",
+      "key": "concepts::赔偿三连",
+      "sort": 25,
+      "data": {
+        "n": "赔偿三连",
+        "en": "indemnify, defend and hold harmless",
+        "one": "三个动词各有分工，缺一个就少一层义务。",
+        "body": "indemnify（赔偿）= 赔钱；defend（抗辩）= 出钱请律师替你打官司；hold harmless（使免受损害）= 保证你不承担任何后果，是兜底。三者连用是英美元的标准短语，中文合同常常只译出「赔偿」这一层，实际上少拿了「抗辩费用由对方出」这一项——而抗辩费用在跨境争议里往往是最贵的部分。配套还有 Losses 的定义：把损失范围（含合理律师费）在定义节锁死，用一句话就能覆盖全部。",
+        "cat": "责任与免责"
+      }
+    },
+    {
+      "set_id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "concept",
+      "key": "concepts::存续与尾随期",
+      "sort": 26,
+      "data": {
+        "n": "存续与尾随期",
+        "en": "survival and tail period",
+        "one": "合同结束了，但有些义务还活着——尤其是收钱的权利。",
+        "body": "存续（survival）指合同终止后某些条款继续有效，英文合同一定单列，因为四类条款必须活着：尾随期、保密（秘密不会因合同结束就公开）、责任限制（期内发生的问题可能事后才爆）、争议解决（解决纠纷必须用）。尾随期（tail period）则是中介／销售类合同的专属设计：防止对方「等合同结束再签单」来规避应付的对价。尾随期越长，对中介越有利。",
+        "cat": "通则"
+      }
+    },
+    {
+      "set_id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "concept",
+      "key": "concepts::独立缔约方与无信义关系",
+      "sort": 27,
+      "data": {
+        "n": "独立缔约方与无信义关系",
+        "en": "independent contractor, no agency, no fiduciary relationship",
+        "one": "一句话防五种关系：合伙、合资、代理、雇佣、信义。",
+        "body": "英美法的 fiduciary（信义／受托）义务标准极高：受托人须忠实、不得有利益冲突、须披露一切、不得利用受托地位获利，违反的后果远超合同违约。顾问合同里若不明确排除，对方有可能主张存在事实上的信义关系。代理（agency）同理——一旦被认定有代理权，你以对方名义签的字可能直接约束对方。所以标准做法是一句排除五项关系，并配一句「无权代表对方作出陈述」。",
+        "cat": "通则"
+      }
+    },
+    {
+      "set_id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "concept",
+      "key": "concepts::日后另议不可执行",
+      "sort": 28,
+      "data": {
+        "n": "日后另议不可执行",
+        "en": "agreement to agree",
+        "one": "只约定「以后再协商确定」，可能整条不可执行。",
+        "body": "英美法的硬规则：条款若只约定双方日后协商、而没有任何客观可确定的标准或默认值，法院会因「不确定（uncertain）」而认定其不可执行。法院承认双方有善意协商的义务，但不会替你们定价格。更麻烦的是自相矛盾的情形：一边写死一个数，一边又说这个数是「暂定的、须再书面确认」——如果事后没签确认书，对方完全可以主张该条款未确定。",
+        "cat": "违约与救济"
+      }
+    },
+    {
+      "set_id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "concept",
+      "key": "concepts::定义驱动",
+      "sort": 29,
+      "data": {
+        "n": "定义驱动",
+        "en": "definitions drive everything",
+        "one": "英美元长合同里，每一个大写术语的含义都在定义节锁死。",
+        "body": "英美法是判例法，法院原则上只解释合同、不替当事人写合同。所以起草者把「关键词的含义」全部前移到定义节：后面正文里每个首字母大写的词，含义都由定义节唯一确定。这样一来，正文可以写得极短，而含义精确。读法也简单：遇到大写术语，先回定义节查；查不到，那就是漏洞——对方律师一定会问。",
+        "cat": "解释与效力"
+      }
+    },
+    {
+      "set_id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "concept",
+      "key": "concepts::侵权路径必须单独列出",
+      "sort": 30,
+      "data": {
+        "n": "侵权路径必须单独列出",
+        "en": "tort (including negligence) as a separate route",
+        "one": "只写「违约责任」会漏掉过失索赔这条路。",
+        "body": "普通法下，同一个损失可能同时有两条索赔路径：合同（contract）与侵权（tort，含过失 negligence）。如果责任上限只写「本协议项下的责任」，字面只覆盖合同路径，对方还能从过失侵权这条路来索赔，绕开上限。所以标准写法是显式枚举：「whether arising in contract, tort (including negligence) or otherwise」。「or otherwise」是兜底，表示不限于这两条路。",
+        "cat": "责任与免责"
+      }
+    },
+    {
+      "set_id": "concepts",
+      "course_id": "en-contract",
+      "lang_code": "en-US",
+      "kind": "concept",
+      "key": "concepts::无第三方受益人",
+      "sort": 31,
+      "data": {
+        "n": "无第三方受益人",
+        "en": "no third-party beneficiaries",
+        "one": "防止合同外的人拿着这份合同来主张权利。",
+        "body": "第三方受益人条款解决的是：合同之外的第三人能不能依据本合同要求强制执行某项条款。若不加限制，某些法域下第三方可能取得直接请求权——例如子公司、被引荐的第三方，都可能主张「这个约定是为我设的」。标准写法是排除：「本协议仅为双方及其经许可的继承人与受让人的利益而设，不向任何其他人授予任何权利」。",
+        "cat": "通则"
+      }
+    }
+  ]
+}
