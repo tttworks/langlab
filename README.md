@@ -17,9 +17,7 @@
 
 ## 作者
 
-**Aloysius Luo** —— 独立开发者，做 AI 全栈 Web 开发与服务器运维。
-这个系统最初是给自己准备的：半年后要去日本做投资业务，需要把
-真实的英文合同、Memo、投资文件「吃透」，而市面上的 App 教不了这些。
+**Aloysius Luo** —— AI 全栈开发与服务器运维。
 
 - GitHub：[@tttworks](https://github.com/tttworks)
 - 联系：a@tttworks.com
@@ -60,60 +58,46 @@
 
 ## 教学上的理论支撑
 
-这不是一个「拍脑袋做的 App」。下面每一条都是系统某个具体设计的依据 ——
-**反过来读，也能看出这个系统刻意没做什么**。
+系统的每一项功能，背后都对应一位学者的研究。**凡是引用，都能查到原文。**
 
-### 1. 可理解输入（Comprehensible Input）
-Krashen 的输入假说认为，语言能力来自略高于当前水平的**可理解输入**（i+1）。
-难点在于「i+1」的量很难把握 —— 而**你自己领域的材料天然就在这个区间**：
-你熟悉业务，但不熟外语表达。
-> **对应设计**：语料只从你自己的文件来；不提供通用课程。
+| # | 功能 | 依据的理论 | 提出者 | 出处 |
+|---|---|---|---|---|
+| 1 | 语料只用自己的真实材料 | 可理解输入假说（i+1） | **Stephen Krashen**<br>南加州大学荣休教授 | Krashen, S. D. (1985). *The Input Hypothesis: Issues and Implications*. Longman. |
+| 2 | 卡片间隔重复排期 | 遗忘曲线与间隔重复 | **Hermann Ebbinghaus**<br>**Piotr Woźniak** | Ebbinghaus, H. (1885). *Über das Gedächtnis*.<br>Woźniak, P. A., & Gorzelańczyk, E. J. (1994). Optimization of Repetition Spacing in the Practice of Learning. *Acta Neurobiologiae Experimentalis*, 54(1), 59–62. |
+| 3 | 记录复习流水（为 FSRS 准备） | 间隔重复调度优化 | **叶峻峣 / 苏敬勇 / 曹译珑** | Ye, J., Su, J., & Cao, Y. (2022). A Stochastic Shortest Path Algorithm for Optimizing Spaced Repetition Scheduling. *KDD '22*, 4381–4390. |
+| 4 | 产出模式（看中文 → 说英文） | 测试效应 / 检索练习 | **Henry L. Roediger III**<br>**Jeffrey D. Karpicke** | Roediger, H. L., & Karpicke, J. D. (2006). Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention. *Psychological Science*, 17(3), 249–255. |
+| 5 | 框架复述 + 录音自评 | 输出假说 | **Merrill Swain**<br>多伦多大学 | Swain, M. (1995). Three Functions of Output in Second Language Learning. In *Principle and Practice in Applied Linguistics*. Oxford University Press. |
+| 6 | 每张卡带音标 + 音节切分 | 双重编码理论 | **Allan Paivio**<br>西安大略大学 | Paivio, A. (1986). *Mental Representations: A Dual Coding Approach*. Oxford University Press. |
+| 7 | 固定搭配 + 出处原句 | 词汇法（Lexical Approach） | **Michael Lewis**<br>**Paul Nation** | Lewis, M. (1993). *The Lexical Approach*. Language Teaching Publications.<br>Nation, I. S. P. (2001). *Learning Vocabulary in Another Language*. Cambridge University Press. |
+| 8 | 限定词高亮 / 分阶段放行 | 认知负荷理论 | **John Sweller**<br>新南威尔士大学 | Sweller, J. (1988). Cognitive Load During Problem Solving: Effects on Learning. *Cognitive Science*, 12(2), 257–285. |
+| 9 | 发音诊断的即时针对性反馈 | 刻意练习 | **K. Anders Ericsson** | Ericsson, K. A., Krampe, R. T., & Tesch-Römer, C. (1993). The Role of Deliberate Practice in the Acquisition of Expert Performance. *Psychological Review*, 100(3), 363–406. |
+| 10 | 一门课对应一个领域 | 窄式输入 | **Stephen Krashen** | Krashen, S. (2004). The Case for Narrow Reading. *Language Magazine*, 3(5), 17–19. |
+| 11 | 划词即建卡 | ⚠️ **不是学术理论** | — | 沉浸学习社区（AJATT / Antimoon）的通行做法 |
 
-### 2. 语境中的词汇习得（Contextual Vocabulary Acquisition）
-孤立背词表的遗忘率极高。词汇在**多个真实语境**中出现时，保留率显著提升。
-> **对应设计**：每张卡带**出处原句**（来自你读的那一段）+ **通用例句** + **固定搭配**，
-> 而不是孤零零一个词。
+> ⚠️ **第 11 条特意标出来**：句子挖掘（sentence mining）是**社区实践**，没有对应的学术论文。
+> 把它混进「理论支撑」里会不诚实 —— 但它确实有效，所以保留，只是标注清楚。
 
-### 3. 间隔重复（Spaced Repetition）
-基于艾宾浩斯遗忘曲线的调度：在「快要忘」的时刻复习，效率最高。
-> **对应设计**：内置 SM-2 调度；同时已在记录 FSRS（新一代调度算法）所需的
-> 完整复习流水，便于将来平滑升级。
+### 与其他方案的区别
 
-### 4. 检索练习与测试效应（Retrieval Practice / Testing Effect）
-主动回忆的效果远好于重复阅读 —— 这是认知心理学里被反复验证的结论。
-> **对应设计**：**产出模式**（看中文 → 自己说出英文 → 再翻面对照），
-> 而不是只做「认得出来」的被动识别。
+![与课程型 App、闪卡工具的能力对比](docs/screenshots/compare.svg)
 
-### 5. 产出假说（Output Hypothesis）
-理解能力和产出能力是两条不同的通道，只输入不足以形成产出能力。
-> **对应设计**：产出模式 + 框架复述 + 录音自评。
+|  | 课程型 App<br>（Duolingo 一类） | 闪卡工具<br>（Anki 一类） | **langlab** |
+|---|---|---|---|
+| 内容来源 | 平台的通用课程 | 你自己建卡 | **你自己的真实材料** |
+| 记忆调度 | 弱 | 最强 | 有（SM-2，已记 FSRS 数据） |
+| 产出训练 | 有限 | 取决于你怎么做卡 | **内置产出模式** |
+| 语音反馈 | 基础识别 | 无 | **本地发音诊断** |
+| 阅读整合 | 无 | 无 | **内嵌阅读器 + 划词建卡** |
+| 数据归属 | 云端账号 | 本地 | **本地** |
+| 上手成本 | 低（打开就能学） | 高（要自己拼装工具链） | 中（要自备材料） |
 
-### 6. 句子挖掘 / 语境卡片（Sentence Mining）
-沉浸学习社区（AJATT、Antimoon）的通行做法：在真实内容里遇到好句子，
-立刻挖出来做成卡，而不是事后靠回忆整理。
-> **对应设计**：阅读时**划词/划句即建卡**，自动带上出处与语境。
+**一句话概括三者的分工**：
 
-### 7. 窄式输入（Narrow Input）
-在同一主题内持续大量输入，词汇重复率高、语境彼此印证，进步快于「什么都看一点」。
-> **对应设计**：一门课程对应一个领域（合同英语 / 投资谈判），而不是打散成通用话题。
+- **课程型 App** 解决「我不知道学什么」—— 它们**给你内容**；
+- **闪卡工具** 解决「我要背下来」—— 但**卡要自己做、材料要自己找**；
+- **langlab** 解决「我手上有一堆材料要吃掉」—— 它把**阅读、建卡、复习、发音反馈**串成一条链。
 
-### 8. 双重编码与字形锚点（Dual Coding）
-音、形、义多渠道编码，比单通道记得牢。对「按声音记词」的学习者，
-**缺字形锚点**是常见短板。
-> **对应设计**：每张卡带 **IPA 音标** + **音节切分**（标注重音）。
-
-### 9. 刻意练习（Deliberate Practice）
-进步来自针对薄弱环节的即时反馈，而不是泛泛地多练。
-> **对应设计**：**发音诊断**指出具体问题（念错词 / 含糊 / 卡壳 / 漏读）；
-> 阅读器**限定词高亮**专攻扫读盲区。
-
-### 10. 降低认知负荷（Cognitive Load）
-无关信息占用的注意力，就是不留给语言本身的注意力。
-> **对应设计**：限定词高亮、分阶段放行（避免一次涌入几百张卡）、
-> 干净的界面（零外链、零广告）。
-
-> ⚠️ 说明：以上是**设计依据**，不是「用了它就一定能学会」的保证。
-> 语言习得没有银弹，这个系统只是把已被验证有效的几件事，做成了能天天用的工具。
+> ⚠️ 最后说明：以上是**设计依据**，不是「用了它就一定能学会」的保证。语言习得没有银弹。
 
 ---
 
